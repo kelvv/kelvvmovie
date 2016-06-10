@@ -4,7 +4,7 @@ var app = koa();
 
 app.use(wechat('kelvvwechattoken').middleware(function *() {
 	var message = this.weixin;
-	this.body = 'kelvv';
+	this.body = 'kelvv and nikki';
 }));
 
 app.listen(443);
