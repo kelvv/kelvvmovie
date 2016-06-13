@@ -1,0 +1,13 @@
+[
+	{
+		"type": "console",
+		"category": "app"
+	},
+	{
+		"type": "file",
+		"filename": "logs/cheese.log",
+		"category": "cheese",
+		"maxLogSize": 20480,
+		"backups": 10
+	}
+]
