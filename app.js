@@ -9,15 +9,12 @@ const applogger = require('./lib/utils/log').get('app');
 const movieHandler = require('./lib/middleware/movieHandler');
 const env = require('./lib/config/env');
 
-app.use(function *(next) {
+app.use(wechat('kelvvwechattoken').middleware(function *() {
 	if(this.originalUrl==='/favicon.ico'){
 		return;
 	}
-})
-
-app.use(wechat('kelvvwechattoken').middleware(function *() {
-	var message = this.weixin;
-	this.searchName = message;
+	//var message = this.weixin;
+	this.searchName = '魔兽';
 	let context = this;
 	this.send = (body) => {
 		context.status = 200;
