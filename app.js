@@ -13,7 +13,6 @@ app.use(function *(next) {
 	if(this.originalUrl==='/favicon.ico'){
 		return;
 	}
-	yield next;
 })
 
 app.use(wechat('kelvvwechattoken').middleware(function *() {
