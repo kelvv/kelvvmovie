@@ -13,8 +13,8 @@ app.use(wechat('kelvvwechattoken').middleware(function *() {
 	if(this.originalUrl==='/favicon.ico'){
 		return;
 	}
-	//var message = this.weixin;
-	this.searchName = '魔兽';
+	var message = this.weixin;
+	this.searchName = message;
 	let context = this;
 	this.send = (body) => {
 		context.status = 200;
