@@ -23,9 +23,9 @@ app.use(wechat('kelvvwechattoken').middleware(function *() {
 		context.status = 200;
 		context.body = body;
 	}
+	movieHandler(this);
 }));
 
-app.use(movieHandler());
 
 app.listen(env.PORT || 9302);
 applogger.info('-----------app is listening in 9302------------');
