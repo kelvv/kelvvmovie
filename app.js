@@ -16,7 +16,7 @@ app.use(function *(next) {
 	yield next;
 })
 
-app.use(wechat('kelvvwechattoken').middleware(function *() {
+app.use(wechat('kelvvwechattoken').middleware(function *(next) {
 	var message = this.weixin;
 	this.searchName = message;
 	let context = this;
