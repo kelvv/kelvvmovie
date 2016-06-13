@@ -23,7 +23,7 @@ app.use(wechat('kelvvwechattoken').middleware(function *() {
 		context.status = 200;
 		context.body = body;
 	}
-	movieHandler(context);
+	yield movieHandler(context);
 }));
 
 

@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/kelvv/kelvvmovie#readme",
   "dependencies": {
+    "co": "^4.6.0",
     "co-wechat": "0.0.4",
     "fs-extra": "^0.30.0",
     "koa": "^1.2.0",
