@@ -8,13 +8,6 @@ const applogger = require('./lib/utils/log').get('app');
 const movieHandler = require('./lib/middleware/movieHandler');
 const env = require('./lib/config/env');
 
-/*app.use(wechat('kelvvwechattoken').middleware(function *() {
-	var message = this.weixin;
-	var resulturl = '';
-	
-	this.body = '已为您找到观看地址：'+resulturl;
-}));*/
-
 app.use(function *(next) {
 	if(this.originalUrl==='/favicon.ico'){
 		return;
@@ -22,16 +15,16 @@ app.use(function *(next) {
 	yield next;
 })
 
-app.use(function *(next){
-	var searchName = '爱丽丝梦游仙境2';
-	this.searchName = searchName;
+app.use(wechat('kelvvwechattoken').middleware(function *() {
+	var message = this.weixin;
+	this.searchName = message;
 	let context = this;
 	this.send = (body) => {
 		context.status = 200;
 		context.body = body;
 	}
 	yield next;
-});
+}));
 
 app.use(movieHandler());
 
