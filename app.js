@@ -1,3 +1,4 @@
+'use strict'
 require('./lib/utils/stringExt');
 const koa = require('koa');
 const wechat = require('co-wechat');
