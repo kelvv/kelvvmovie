@@ -16,7 +16,7 @@ app.use(function *(next) {
 	yield next;
 })
 
-app.use(wechat('kelvvwechattoken').middleware(function *(next) {
+app.use(wechat('kelvvwechattoken').middleware(function *() {
 	var message = this.weixin;
 	this.searchName = message;
 	let context = this;
@@ -24,7 +24,6 @@ app.use(wechat('kelvvwechattoken').middleware(function *(next) {
 		context.status = 200;
 		context.body = body;
 	}
-	yield next;
 }));
 
 app.use(movieHandler());
