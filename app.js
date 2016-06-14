@@ -14,7 +14,7 @@ app.use(function *() {
 	if(this.originalUrl==='/favicon.ico'){
 		return;
 	}
-	this.searchName = '致命呼叫/危情911';
+	this.searchName = '谎言大爆炸';
 	let context = this;
 	this.send = (body) => {
 		context.status = 200;
