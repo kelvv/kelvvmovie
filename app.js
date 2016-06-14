@@ -29,8 +29,7 @@ app.use(wechat('kelvvwechattoken').middleware(function *() {
 		return;
 	}
 	var message = this.weixin;
-	console.log(message);
-	this.searchName = message;
+	this.searchName = message.Content;
 	let context = this;
 	this.send = (body) => {
 		context.status = 200;
