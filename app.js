@@ -9,6 +9,7 @@ const applogger = require('./lib/utils/log').get('app');
 const movieHandler = require('./lib/middleware/movieHandler');
 const env = require('./lib/config/env');
 
+/*
 app.use(function *() {
 	if(this.originalUrl==='/favicon.ico'){
 		return;
@@ -21,7 +22,8 @@ app.use(function *() {
 	}
 	yield movieHandler(context);
 })
-/*
+*/
+
 app.use(wechat('kelvvwechattoken').middleware(function *() {
 	if(this.originalUrl==='/favicon.ico'){
 		return;
@@ -35,7 +37,7 @@ app.use(wechat('kelvvwechattoken').middleware(function *() {
 	}
 	yield movieHandler(context);
 }));
-*/
+
 
 app.listen(env.PORT || 9302);
 applogger.info('-----------app is listening in 9302------------');
